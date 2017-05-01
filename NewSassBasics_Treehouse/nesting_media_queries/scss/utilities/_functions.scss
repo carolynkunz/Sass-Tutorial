@@ -1,0 +1,13 @@
+// ======================================
+//  Functions
+// ======================================
+
+@function px-to-pc($target, $context: $max-width) {
+  @return ($target / $context) * 100%;
+}
+
+@function per-line($items) {
+  $g-pct: px-to-pc($gutter) * 2; // use the gutter (card margin) value and multiply by two to account for both left and right margins
+  $g-total: $items * $g-pct; // getting the total gutter value for each row
+  @return (100% / $items) - $g-total;
+}
